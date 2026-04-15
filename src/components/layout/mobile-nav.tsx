@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { usePSIHStore } from "@/lib/store";
-import { ShoppingCart, LayoutGrid, Hammer, Instagram } from "lucide-react";
+import { ShoppingCart, LayoutGrid, Hammer, Instagram, Send } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
@@ -20,7 +20,7 @@ export function MobileNav() {
   ];
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] w-[90%] max-w-md">
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] w-[95%] max-w-md">
       <nav className="bg-black/80 backdrop-blur-xl border border-white/10 rounded-full p-2 flex items-center justify-between shadow-2xl">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
@@ -47,14 +47,25 @@ export function MobileNav() {
             </Link>
           );
         })}
-        <div className="w-px h-6 bg-white/10 mx-2" />
-        <Link 
-          href="https://instagram.com" 
-          target="_blank"
-          className="w-12 h-12 flex items-center justify-center text-white/60 hover:text-white transition-colors"
-        >
-          <Instagram className="h-5 w-5" />
-        </Link>
+        
+        <div className="w-px h-6 bg-white/10 mx-1" />
+        
+        <div className="flex items-center gap-1">
+          <Link 
+            href="https://instagram.com" 
+            target="_blank"
+            className="w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
+          >
+            <Instagram className="h-5 w-5" />
+          </Link>
+          <Link 
+            href="https://t.me" 
+            target="_blank"
+            className="w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
+          >
+            <Send className="h-5 w-5" />
+          </Link>
+        </div>
       </nav>
     </div>
   );

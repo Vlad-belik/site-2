@@ -2,8 +2,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Instagram, Send } from "lucide-react";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function Home() {
   const newArrivals = [
@@ -29,16 +27,6 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black" />
         </div>
         
-        {/* Side Icons */}
-        <div className="absolute bottom-8 left-6 z-20 md:bottom-12 md:left-12 flex gap-6 md:gap-4">
-          <Link href="#" className="text-white/60 hover:text-white transition-colors">
-            <Instagram className="h-5 w-5 md:h-5 md:w-5" />
-          </Link>
-          <Link href="#" className="text-white/60 hover:text-white transition-colors">
-            <Send className="h-5 w-5 md:h-5 md:w-5" />
-          </Link>
-        </div>
-
         <div className="relative z-10 text-center px-4 w-full flex flex-col items-center">
           {/* Logo with Glitch Effect */}
           <div className="relative w-full max-w-[85vw] md:max-w-xl aspect-[2/1] mb-10 md:mb-12 glitch-image">
@@ -52,7 +40,7 @@ export default function Home() {
             />
           </div>
           
-          {/* Compressed Buttons for Mobile */}
+          {/* Compressed Buttons */}
           <div className="flex justify-center gap-4 w-full max-w-[320px] md:max-w-sm mx-auto">
             <Link href="/shop?gender=men" className="flex-1">
               <Button className="w-full bg-white text-black hover:bg-primary hover:text-white font-headline font-bold text-[12px] md:text-[11px] py-4 md:py-4 transition-all uppercase tracking-[0.2em] rounded-none h-14 md:h-12 shadow-lg">
