@@ -2,6 +2,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { usePSIHStore } from "@/lib/store";
 import { ShoppingCart, LayoutGrid, Hammer, Instagram, Send } from "lucide-react";
@@ -21,47 +22,68 @@ export function MobileNav() {
 
   return (
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] w-[95%] max-w-md">
-      <nav className="bg-black/80 backdrop-blur-xl border border-white/10 rounded-full p-2 flex items-center justify-between shadow-2xl">
-        {navItems.map((item) => {
-          const isActive = pathname === item.href;
-          const Icon = item.icon;
-          
-          return (
-            <Link 
-              key={item.href} 
-              href={item.href}
-              className={cn(
-                "flex flex-col items-center justify-center flex-1 h-12 rounded-full transition-all relative",
-                isActive ? "text-primary" : "text-white/60"
-              )}
-            >
-              <Icon className="h-5 w-5" />
-              <span className="text-[8px] font-bold mt-1 tracking-widest uppercase">
-                {item.label}
-              </span>
-              {item.badge !== undefined && item.badge > 0 && (
-                <Badge className="absolute top-1 right-2 h-4 w-4 flex items-center justify-center bg-primary p-0 text-[8px] border-none">
-                  {item.badge}
-                </Badge>
-              )}
-            </Link>
-          );
-        })}
+      <nav className="bg-black/80 backdrop-blur-xl border border-white/10 rounded-full p-2 flex items-center justify-between shadow-2xl px-4">
+        {/* Logo Link to Home */}
+        <Link 
+          href="/" 
+          className="flex items-center justify-center hover:scale-110 transition-transform"
+        >
+          <div className="relative w-8 h-8">
+            <Image 
+              src="/my-image.png" 
+              alt="PSIH Logo" 
+              fill 
+              className="object-contain grayscale brightness-200"
+            />
+          </div>
+        </Link>
+
+        <div className="w-px h-6 bg-white/10 mx-2" />
+
+        {/* Main Nav Items */}
+        <div className="flex items-center flex-1">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            const Icon = item.icon;
+            
+            return (
+              <Link 
+                key={item.href} 
+                href={item.href}
+                className={cn(
+                  "flex flex-col items-center justify-center flex-1 h-12 rounded-full transition-all relative",
+                  isActive ? "text-primary" : "text-white/60"
+                )}
+              >
+                <Icon className="h-5 w-5" />
+                <span className="text-[8px] font-bold mt-1 tracking-widest uppercase">
+                  {item.label}
+                </span>
+                {item.badge !== undefined && item.badge > 0 && (
+                  <Badge className="absolute top-1 right-2 h-4 w-4 flex items-center justify-center bg-primary p-0 text-[8px] border-none">
+                    {item.badge}
+                  </Badge>
+                )}
+              </Link>
+            );
+          })}
+        </div>
         
-        <div className="w-px h-6 bg-white/10 mx-1" />
+        <div className="w-px h-6 bg-white/10 mx-2" />
         
+        {/* Social Links */}
         <div className="flex items-center gap-1">
           <Link 
             href="https://instagram.com" 
             target="_blank"
-            className="w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            className="w-8 h-8 flex items-center justify-center text-white/60 hover:text-white transition-colors"
           >
             <Instagram className="h-5 w-5" />
           </Link>
           <Link 
             href="https://t.me" 
             target="_blank"
-            className="w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            className="w-8 h-8 flex items-center justify-center text-white/60 hover:text-white transition-colors"
           >
             <Send className="h-5 w-5" />
           </Link>
