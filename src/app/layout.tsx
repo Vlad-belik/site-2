@@ -1,7 +1,6 @@
 
 import type {Metadata} from 'next';
 import './globals.css';
-import {Header} from '@/components/layout/header';
 import {Footer} from '@/components/layout/footer';
 import {Toaster} from '@/components/ui/toaster';
 import {MobileNav} from '@/components/layout/mobile-nav';
@@ -30,7 +29,6 @@ export default function RootLayout({
       </head>
       <body className="font-body bg-black text-white antialiased selection:bg-primary selection:text-white pb-24">
         <div className="relative z-10 flex min-h-screen flex-col">
-          <Header />
           <main className="flex-1">
             {children}
           </main>
