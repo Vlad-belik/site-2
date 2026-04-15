@@ -1,3 +1,4 @@
+
 import type {Metadata} from 'next';
 import './globals.css';
 import {Header} from '@/components/layout/header';
@@ -5,6 +6,7 @@ import {Footer} from '@/components/layout/footer';
 import {Toaster} from '@/components/ui/toaster';
 import {PsychFilterWrapper} from '@/components/psych/psych-filter-wrapper';
 import {PsychRealm} from '@/components/psych/psych-realm';
+import {MobileNav} from '@/components/layout/mobile-nav';
 
 export const metadata: Metadata = {
   title: 'PSIH | Underground Horror Streetwear',
@@ -28,7 +30,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body bg-black text-white antialiased selection:bg-primary selection:text-white">
+      <body className="font-body bg-black text-white antialiased selection:bg-primary selection:text-white pb-24">
         <PsychFilterWrapper>
           <PsychRealm />
           <div className="relative z-10 flex min-h-screen flex-col">
@@ -38,6 +40,7 @@ export default function RootLayout({
             </main>
             <Footer />
           </div>
+          <MobileNav />
           <Toaster />
         </PsychFilterWrapper>
       </body>
