@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -32,12 +31,10 @@ export default function Home() {
         </div>
         
         {/* Side Icons */}
-        <div className="absolute bottom-12 left-6 z-20 md:left-12">
+        <div className="absolute bottom-12 left-6 z-20 md:left-12 flex gap-4">
           <Link href="#" className="text-white/40 hover:text-white transition-colors">
             <Instagram className="h-4 w-4 md:h-5 md:w-5" />
           </Link>
-        </div>
-        <div className="absolute bottom-12 right-6 z-20 md:right-12">
           <Link href="#" className="text-white/40 hover:text-white transition-colors">
             <Send className="h-4 w-4 md:h-5 md:w-5" />
           </Link>
@@ -45,25 +42,25 @@ export default function Home() {
 
         <div className="relative z-10 text-center px-4 w-full flex flex-col items-center">
           {/* Logo Replacement with Glitch Effect */}
-          <div className="relative w-full max-w-[80vw] md:max-w-2xl aspect-[2/1] mb-8 glitch-image">
+          <div className="relative w-full max-w-[70vw] md:max-w-xl aspect-[2/1] mb-12 glitch-image">
             <Image 
-              src={logoImage?.imageUrl || "https://picsum.photos/seed/psih-logo/800/400"} 
+              src={logoImage?.imageUrl || "/my-image.jpg"} 
               alt="PSIH Logo" 
               fill 
               className="object-contain grayscale brightness-200"
               priority
-              data-ai-hint={logoImage?.imageHint || "horror logo"}
+              data-ai-hint="horror logo"
             />
           </div>
           
-          <div className="flex justify-center gap-4 w-full max-w-[320px] mx-auto">
+          <div className="flex justify-center gap-4 w-full max-w-[280px] mx-auto">
             <Link href="/shop?gender=men" className="flex-1">
-              <Button className="w-full bg-white text-black hover:bg-primary hover:text-white font-headline font-bold text-xs py-6 transition-all uppercase tracking-[0.2em] rounded-none">
+              <Button className="w-full bg-white text-black hover:bg-primary hover:text-white font-headline font-bold text-[10px] py-4 transition-all uppercase tracking-[0.2em] rounded-none h-11">
                 MEN
               </Button>
             </Link>
             <Link href="/shop?gender=women" className="flex-1">
-              <Button className="w-full bg-transparent border border-white text-white hover:bg-white hover:text-black font-headline font-bold text-xs py-6 transition-all uppercase tracking-[0.2em] rounded-none">
+              <Button className="w-full bg-transparent border border-white text-white hover:bg-white hover:text-black font-headline font-bold text-[10px] py-4 transition-all uppercase tracking-[0.2em] rounded-none h-11">
                 WOMEN
               </Button>
             </Link>

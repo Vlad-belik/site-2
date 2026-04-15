@@ -3,7 +3,7 @@
     {
       "id": "logo",
       "description": "Main PSIH Logo with horror aesthetic",
-      "imageUrl": "https://picsum.photos/seed/psih-logo-dark/800/400",
+      "imageUrl": "/my-image.jpg",
       "imageHint": "black metal logo"
     }
   ]
