@@ -4,11 +4,11 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-black py-12 text-muted-foreground">
+    <footer className="border-t border-border bg-black py-16 text-muted-foreground">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <div className="relative h-12 w-32 mb-6">
+            <div className="relative h-20 w-56 mb-8">
               <Image 
                 src="/my-image.png" 
                 alt="PSIH Logo" 
@@ -16,7 +16,7 @@ export function Footer() {
                 className="object-contain grayscale brightness-200"
               />
             </div>
-            <p className="max-w-md text-sm leading-relaxed mb-6">
+            <p className="max-w-md text-sm leading-relaxed mb-8">
               Российский андеграунд бренд одежды. Мы создаем кошмары, которые можно носить. 
               Каждое изделие — это манифест твоего внутреннего безумия.
             </p>
