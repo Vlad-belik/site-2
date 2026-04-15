@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { ProductCard } from "@/components/shop/product-card";
 import { Button } from "@/components/ui/button";
@@ -25,7 +25,7 @@ const PRODUCTS = [
   { id: '8', name: 'HOODIE "BLOOD"', category: 'ХУДИ', gender: 'women', price: 6900, img: 'https://picsum.photos/seed/b-hood/800/1000' },
 ];
 
-export default function ShopPage() {
+function ShopContent() {
   const searchParams = useSearchParams();
   const genderParam = searchParams.get("gender");
   
@@ -57,7 +57,6 @@ export default function ShopPage() {
         </h1>
         
         <div className="flex flex-col gap-6 border-y border-border py-6">
-          {/* Gender Filter */}
           <div className="flex gap-4">
              {["ВСЕ", "men", "women"].map(g => (
               <button 
@@ -117,5 +116,17 @@ export default function ShopPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function ShopPage() {
+  return (
+    <Suspense fallback={
+      <div className="container mx-auto px-4 py-32 text-center">
+        <p className="font-headline text-2xl text-muted-foreground uppercase tracking-widest animate-pulse">Загрузка каталога...</p>
+      </div>
+    }>
+      <ShopContent />
+    </Suspense>
   );
 }
