@@ -90,15 +90,15 @@ export default function Home() {
       {/* Aesthetic Section */}
       <section className="py-20 md:py-32 bg-muted/30 border-y border-border overflow-hidden relative">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-headline text-[40vw] md:text-[30vw] font-bold text-white tracking-tighter select-none">
-            VOID
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-headline text-[25vw] md:text-[20vw] font-bold text-white tracking-tighter select-none uppercase">
+            TIRED
            </div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="font-headline text-3xl md:text-6xl font-bold text-white mb-6 md:mb-8 tracking-tighter glitch-text uppercase">ДЛЯ ТВОЕГО СКЕЛЕТА</h2>
             <p className="text-xs md:text-lg text-muted-foreground leading-relaxed italic px-2">
-              "Одежда PSIH не просто скрывает твоё тело. Она проявляет твою суть. Мрачная эстетика улиц, рожденная в подвалах и вдохновленная кошмарами."
+              Одежда tiredbecursed не просто скрывает твоё тело. Она проявляет твою суть. Мрачная эстетика улиц, рожденная в подвалах и вдохновленная кошмарами.
             </p>
           </div>
         </div>
