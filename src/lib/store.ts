@@ -14,15 +14,11 @@ interface CartItem {
 interface PSIHState {
   cart: CartItem[];
   wishlist: string[]; // array of product IDs
-  isPsychFilterActive: boolean;
-  isPsychRealmActive: boolean;
   
   // Actions
   addToCart: (item: CartItem) => void;
   removeFromCart: (id: string, size: string) => void;
   toggleWishlist: (productId: string) => void;
-  togglePsychFilter: () => void;
-  togglePsychRealm: () => void;
   clearCart: () => void;
 }
 
@@ -31,8 +27,6 @@ export const usePSIHStore = create<PSIHState>()(
     (set) => ({
       cart: [],
       wishlist: [],
-      isPsychFilterActive: false,
-      isPsychRealmActive: false,
 
       addToCart: (item) => set((state) => {
         const existing = state.cart.find(i => i.id === item.id && i.size === item.size);
@@ -58,18 +52,13 @@ export const usePSIHStore = create<PSIHState>()(
           : [...state.wishlist, productId]
       })),
 
-      togglePsychFilter: () => set((state) => ({ isPsychFilterActive: !state.isPsychFilterActive })),
-      
-      togglePsychRealm: () => set((state) => ({ isPsychRealmActive: !state.isPsychRealmActive })),
-
       clearCart: () => set({ cart: [] }),
     }),
     {
-      name: 'psih-storage-v3',
+      name: 'psih-storage-v4',
       partialize: (state) => ({ 
         cart: state.cart, 
         wishlist: state.wishlist,
-        isPsychFilterActive: state.isPsychFilterActive 
       }),
     }
   )
