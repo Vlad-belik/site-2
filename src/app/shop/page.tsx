@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -37,18 +36,18 @@ export default function ShopPage() {
   });
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="flex flex-col gap-8 mb-16">
-        <h1 className="font-headline text-8xl md:text-[10vw] font-bold tracking-tighter text-white uppercase glitch-text leading-none">КАТАЛОГ</h1>
+    <div className="container mx-auto px-4 py-8 md:py-12">
+      <div className="flex flex-col gap-6 md:gap-8 mb-10 md:mb-16">
+        <h1 className="font-headline text-6xl md:text-[10vw] font-bold tracking-tighter text-white uppercase glitch-text leading-none">КАТАЛОГ</h1>
         
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 border-y border-border py-6">
-          <div className="flex flex-wrap gap-3">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border-y border-border py-4 md:py-6">
+          <div className="flex overflow-x-auto pb-2 md:pb-0 w-full md:w-auto scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0 gap-2 md:gap-3">
             {CATEGORIES.map(cat => (
               <Button 
                 key={cat} 
                 variant={activeCategory === cat ? "default" : "outline"}
                 onClick={() => setActiveCategory(cat)}
-                className={`rounded-none font-bold uppercase tracking-widest text-[10px] h-10 px-6 transition-all border-border ${
+                className={`rounded-none font-bold uppercase tracking-widest text-[9px] md:text-[10px] h-9 md:h-10 px-4 md:px-6 transition-all border-border whitespace-nowrap ${
                   activeCategory === cat ? 'bg-primary text-white border-primary' : 'bg-transparent text-white hover:bg-white hover:text-black hover:border-white'
                 }`}
               >
@@ -57,10 +56,10 @@ export default function ShopPage() {
             ))}
           </div>
           
-          <div className="flex items-center gap-4 w-full md:w-auto">
-            <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold whitespace-nowrap">СОРТИРОВКА:</span>
+          <div className="flex items-center gap-3 md:gap-4 w-full md:w-auto pt-2 md:pt-0">
+            <span className="text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground font-bold whitespace-nowrap">СОРТ:</span>
             <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-full md:w-[220px] bg-black border-border text-white text-[10px] font-bold uppercase tracking-widest rounded-none h-10 px-4">
+              <SelectTrigger className="w-full md:w-[220px] bg-black border-border text-white text-[9px] md:text-[10px] font-bold uppercase tracking-widest rounded-none h-9 md:h-10 px-4">
                 <SelectValue placeholder="Сначала новые" />
               </SelectTrigger>
               <SelectContent className="bg-black border-border text-white rounded-none">
@@ -73,21 +72,21 @@ export default function ShopPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16">
+      <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 md:gap-x-8 gap-y-10 md:gap-y-16">
         {filteredProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
       
       {filteredProducts.length === 0 && (
-        <div className="py-32 text-center border border-dashed border-border">
-          <p className="font-headline text-2xl text-muted-foreground uppercase tracking-[0.5em] animate-pulse">Ничего не найдено в этой бездне</p>
+        <div className="py-24 md:py-32 text-center border border-dashed border-border">
+          <p className="font-headline text-lg md:text-2xl text-muted-foreground uppercase tracking-[0.5em] animate-pulse px-4">Ничего не найдено в этой бездне</p>
         </div>
       )}
       
-      <div className="mt-24 pt-12 border-t border-border flex justify-center">
-        <Button variant="outline" className="rounded-none border-border text-muted-foreground hover:text-white font-bold uppercase tracking-[0.3em] px-12 py-8">
-          ПОКАЗАТЬ ЕЩЁ
+      <div className="mt-16 md:mt-24 pt-8 md:pt-12 border-t border-border flex justify-center">
+        <Button variant="outline" className="w-full md:w-auto rounded-none border-border text-muted-foreground hover:text-white font-bold uppercase tracking-[0.3em] px-12 py-6 md:py-8">
+          ЕЩЁ ТОВАРЫ
         </Button>
       </div>
     </div>
