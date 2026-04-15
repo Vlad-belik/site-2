@@ -1,6 +1,8 @@
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { Instagram, Send, ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function Home() {
   const newArrivals = [
@@ -13,7 +15,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[85vh] md:h-[90vh] flex items-center justify-center overflow-hidden border-b border-border">
+      <section className="relative h-[80vh] md:h-[90vh] flex items-center justify-center overflow-hidden border-b border-border">
         <div className="absolute inset-0 z-0">
           <Image 
             src="https://picsum.photos/seed/psih-hero/1920/1080" 
@@ -26,22 +28,32 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black" />
         </div>
         
+        {/* Side Icons */}
+        <div className="absolute bottom-12 left-6 z-20 md:left-12">
+          <Link href="#" className="text-white/40 hover:text-white transition-colors">
+            <Instagram className="h-4 w-4 md:h-5 md:w-5" />
+          </Link>
+        </div>
+        <div className="absolute bottom-12 right-6 z-20 md:right-12">
+          <Link href="#" className="text-white/40 hover:text-white transition-colors">
+            <Send className="h-4 w-4 md:h-5 md:w-5" />
+          </Link>
+        </div>
+
         <div className="relative z-10 text-center px-4 w-full">
-          <h1 className="font-headline text-[25vw] md:text-[20vw] font-bold leading-none tracking-tighter text-white glitch-text mb-4">
+          <h1 className="font-headline text-[28vw] md:text-[20vw] font-bold leading-none tracking-tighter text-white glitch-text mb-8">
             PSIH
           </h1>
-          <p className="font-headline text-sm md:text-3xl font-light uppercase tracking-[0.4em] md:tracking-[0.5em] text-primary animate-pulse">
-            NEW COLLECTION / ДРОП 2026
-          </p>
-          <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4 px-6 md:px-0">
-            <Link href="/shop" className="w-full sm:w-auto">
-              <Button className="w-full bg-white text-black hover:bg-primary hover:text-white font-headline font-bold text-lg px-12 py-8 transition-all uppercase tracking-widest rounded-none">
-                В КАТАЛОГ
+          
+          <div className="mt-8 flex justify-center gap-4 max-w-[320px] mx-auto">
+            <Link href="/shop?gender=men" className="flex-1">
+              <Button className="w-full bg-white text-black hover:bg-primary hover:text-white font-headline font-bold text-xs py-6 transition-all uppercase tracking-[0.2em] rounded-none">
+                MEN
               </Button>
             </Link>
-            <Link href="/builder" className="w-full sm:w-auto">
-              <Button variant="outline" className="w-full border-white text-white hover:bg-white hover:text-black font-headline font-bold text-lg px-12 py-8 transition-all uppercase tracking-widest rounded-none">
-                КОНСТРУКТОР
+            <Link href="/shop?gender=women" className="flex-1">
+              <Button className="w-full bg-transparent border border-white text-white hover:bg-white hover:text-black font-headline font-bold text-xs py-6 transition-all uppercase tracking-[0.2em] rounded-none">
+                WOMEN
               </Button>
             </Link>
           </div>
@@ -71,9 +83,6 @@ export default function Home() {
                   className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                   data-ai-hint="clothing photo"
                 />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center justify-center">
-                  <span className="bg-white text-black font-bold px-4 py-2 uppercase tracking-widest text-xs">Подробнее</span>
-                </div>
               </div>
               <h3 className="font-headline text-xs md:text-lg font-bold tracking-tight text-white uppercase truncate">{product.name}</h3>
               <p className="text-primary text-xs md:text-base font-bold mt-1">{product.price}</p>
@@ -91,7 +100,7 @@ export default function Home() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-headline text-4xl md:text-6xl font-bold text-white mb-6 md:mb-8 tracking-tighter glitch-text">ДЛЯ ТВОЕГО СКЕЛЕТА</h2>
+            <h2 className="font-headline text-4xl md:text-6xl font-bold text-white mb-6 md:mb-8 tracking-tighter glitch-text uppercase">ДЛЯ ТВОЕГО СКЕЛЕТА</h2>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed italic px-4">
               "Одежда PSIH не просто скрывает твоё тело. Она проявляет твою суть. Мрачная эстетика улиц, рожденная в подвалах и вдохновленная кошмарами."
             </p>
