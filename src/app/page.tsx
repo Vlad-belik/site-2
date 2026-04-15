@@ -2,7 +2,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Instagram, Send, ArrowLeft, ArrowRight } from "lucide-react";
+import { Instagram, Send } from "lucide-react";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function Home() {
   const newArrivals = [
@@ -11,6 +12,8 @@ export default function Home() {
     { id: '3', name: 'CARGO "ABYSS"', price: '8,880 ₽', img: 'https://picsum.photos/seed/abyss-cargo/800/1000' },
     { id: '4', name: 'JACKET "PSYCH"', price: '12,000 ₽', img: 'https://picsum.photos/seed/psych-jacket/800/1000' },
   ];
+
+  const logoImage = PlaceHolderImages.find(img => img.id === 'logo');
 
   return (
     <div className="flex flex-col">
@@ -40,12 +43,20 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="relative z-10 text-center px-4 w-full">
-          <h1 className="font-headline text-[28vw] md:text-[20vw] font-bold leading-none tracking-tighter text-white glitch-text mb-8">
-            PSIH
-          </h1>
+        <div className="relative z-10 text-center px-4 w-full flex flex-col items-center">
+          {/* Logo Replacement with Glitch Effect */}
+          <div className="relative w-full max-w-[80vw] md:max-w-2xl aspect-[2/1] mb-8 glitch-image">
+            <Image 
+              src={logoImage?.imageUrl || "https://picsum.photos/seed/psih-logo/800/400"} 
+              alt="PSIH Logo" 
+              fill 
+              className="object-contain grayscale brightness-200"
+              priority
+              data-ai-hint={logoImage?.imageHint || "horror logo"}
+            />
+          </div>
           
-          <div className="mt-8 flex justify-center gap-4 max-w-[320px] mx-auto">
+          <div className="flex justify-center gap-4 w-full max-w-[320px] mx-auto">
             <Link href="/shop?gender=men" className="flex-1">
               <Button className="w-full bg-white text-black hover:bg-primary hover:text-white font-headline font-bold text-xs py-6 transition-all uppercase tracking-[0.2em] rounded-none">
                 MEN
