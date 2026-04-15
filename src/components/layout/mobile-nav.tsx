@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { usePSIHStore } from "@/lib/store";
-import { ShoppingCart, LayoutGrid, Hammer, Image as ImageIcon, Instagram } from "lucide-react";
+import { ShoppingCart, LayoutGrid, Hammer, Instagram } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
@@ -16,7 +16,6 @@ export function MobileNav() {
   const navItems = [
     { label: "SHOP", icon: LayoutGrid, href: "/shop" },
     { label: "BUILDER", icon: Hammer, href: "/builder" },
-    { label: "VISIONS", icon: ImageIcon, href: "/visions" },
     { label: "CART", icon: ShoppingCart, href: "/cart", badge: cartCount },
   ];
 
