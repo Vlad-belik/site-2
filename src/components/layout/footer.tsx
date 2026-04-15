@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,7 +10,7 @@ export function Footer() {
             <div className="relative h-20 w-56 mb-8">
               <Image 
                 src="/my-image.png" 
-                alt="PSIH Logo" 
+                alt="TIRED Logo" 
                 fill 
                 className="object-contain grayscale brightness-200"
               />
@@ -54,7 +53,7 @@ export function Footer() {
         </div>
         
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest">
-          <p>© 2026 PSIH FOR YOUR SKELETON</p>
+          <p>© 2026 TIRED FOR YOUR SKELETON</p>
           <div className="flex gap-6">
             <span>Сделано в бездне</span>
             <span>Политика конфиденциальности</span>

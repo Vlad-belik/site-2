@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -17,7 +16,7 @@ export default function Home() {
       <section className="relative h-[85vh] md:h-[90vh] flex items-center justify-center overflow-hidden border-b border-border">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="https://picsum.photos/seed/psih-hero/1920/1080" 
+            src="https://picsum.photos/seed/tired-hero/1920/1080" 
             alt="Hero Background" 
             fill 
             className="object-cover opacity-40 grayscale"
@@ -32,7 +31,7 @@ export default function Home() {
           <div className="relative w-full max-w-[85vw] md:max-w-xl aspect-[2/1] mb-10 md:mb-12 glitch-image">
             <Image 
               src="/my-image.png" 
-              alt="PSIH Logo" 
+              alt="Logo" 
               fill 
               className="object-contain grayscale brightness-200"
               priority
@@ -61,7 +60,7 @@ export default function Home() {
         <div className="flex justify-between items-end mb-8 md:mb-16 border-b border-border pb-4 md:pb-8">
           <div>
             <h2 className="font-headline text-2xl md:text-5xl font-bold tracking-tighter text-white uppercase">Новинки</h2>
-            <p className="text-[9px] md:text-sm text-muted-foreground uppercase tracking-widest mt-1 md:mt-2">Latest additions to the psych realm</p>
+            <p className="text-[9px] md:text-sm text-muted-foreground uppercase tracking-widest mt-1 md:mt-2">Latest additions to the realm</p>
           </div>
           <Link href="/shop" className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-primary hover:text-white transition-colors underline underline-offset-8">
             Все →

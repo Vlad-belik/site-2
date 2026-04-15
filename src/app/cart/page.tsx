@@ -97,11 +97,6 @@ export default function CartPage() {
               <p className="text-[10px] text-muted-foreground leading-relaxed uppercase tracking-widest">
                 Нажимая кнопку "Оформить заказ", вы соглашаетесь с условиями оферты и политикой конфиденциальности бездны.
               </p>
-              <div className="flex gap-4 grayscale opacity-40">
-                <Image src="https://picsum.photos/seed/visa/100/60" alt="Visa" width={40} height={24} />
-                <Image src="https://picsum.photos/seed/mc/100/60" alt="Mastercard" width={40} height={24} />
-                <Image src="https://picsum.photos/seed/mir/100/60" alt="Mir" width={40} height={24} />
-              </div>
             </div>
           </div>
         </div>

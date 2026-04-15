@@ -3,13 +3,14 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
+// All keys removed or replaced with generic mocks for visual-only environment
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "mock-api-key",
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "psih-threads.firebaseapp.com",
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || "psih-threads",
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || "psih-threads.appspot.com",
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "0000000000",
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || "1:0000000000:web:0000000000"
+  apiKey: "mock-api-key",
+  authDomain: "tired-threads.firebaseapp.com",
+  projectId: "tired-threads",
+  storageBucket: "tired-threads.appspot.com",
+  messagingSenderId: "0000000000",
+  appId: "1:0000000000:web:0000000000"
 };
 
 const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);

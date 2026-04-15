@@ -1,4 +1,3 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 import {Footer} from '@/components/layout/footer';
@@ -6,12 +5,12 @@ import {Toaster} from '@/components/ui/toaster';
 import {MobileNav} from '@/components/layout/mobile-nav';
 
 export const metadata: Metadata = {
-  title: 'PSIH | Underground Horror Streetwear',
+  title: 'TIRED | Underground Horror Streetwear',
   description: 'Russian underground clothing for your skeleton. Dark, brutalist, and unsettling.',
   openGraph: {
-    title: 'PSIH Threads',
+    title: 'TIRED Threads',
     description: 'Underground Horror Streetwear',
-    images: ['https://picsum.photos/seed/psih-og/1200/630'],
+    images: ['https://picsum.photos/seed/tired-og/1200/630'],
   },
 };
 
