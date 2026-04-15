@@ -11,7 +11,7 @@ export default {
     extend: {
       fontFamily: {
         body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        headline: ['Space Grotesk', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
@@ -88,10 +88,15 @@ export default {
             height: '0',
           },
         },
+        'flicker': {
+          '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': { opacity: '1' },
+          '20%, 21.999%, 63%, 63.999%, 65%, 69.999%': { opacity: '0.4' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'flicker': 'flicker 2s infinite',
       },
     },
   },
