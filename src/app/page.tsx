@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -41,10 +42,10 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 text-center px-4 w-full flex flex-col items-center">
-          {/* Logo Replacement with Glitch Effect */}
-          <div className="relative w-full max-w-[70vw] md:max-w-xl aspect-[2/1] mb-12 glitch-image">
+          {/* Logo with Glitch Effect */}
+          <div className="relative w-full max-w-[70vw] md:max-w-xl aspect-[2/1] mb-8 md:mb-12 glitch-image">
             <Image 
-              src={logoImage?.imageUrl || "/my-image.jpg"} 
+              src="/my-image.png" 
               alt="PSIH Logo" 
               fill 
               className="object-contain grayscale brightness-200"
@@ -53,14 +54,15 @@ export default function Home() {
             />
           </div>
           
-          <div className="flex justify-center gap-4 w-full max-w-[280px] mx-auto">
+          {/* Compressed Buttons for Mobile */}
+          <div className="flex justify-center gap-3 md:gap-4 w-full max-w-[260px] md:max-w-sm mx-auto">
             <Link href="/shop?gender=men" className="flex-1">
-              <Button className="w-full bg-white text-black hover:bg-primary hover:text-white font-headline font-bold text-[10px] py-4 transition-all uppercase tracking-[0.2em] rounded-none h-11">
+              <Button className="w-full bg-white text-black hover:bg-primary hover:text-white font-headline font-bold text-[9px] md:text-[11px] py-3 md:py-4 transition-all uppercase tracking-[0.2em] rounded-none h-10 md:h-12 shadow-lg">
                 MEN
               </Button>
             </Link>
             <Link href="/shop?gender=women" className="flex-1">
-              <Button className="w-full bg-transparent border border-white text-white hover:bg-white hover:text-black font-headline font-bold text-[10px] py-4 transition-all uppercase tracking-[0.2em] rounded-none h-11">
+              <Button className="w-full bg-transparent border border-white text-white hover:bg-white hover:text-black font-headline font-bold text-[9px] md:text-[11px] py-3 md:py-4 transition-all uppercase tracking-[0.2em] rounded-none h-10 md:h-12 shadow-lg">
                 WOMEN
               </Button>
             </Link>
@@ -69,11 +71,11 @@ export default function Home() {
       </section>
 
       {/* New Arrivals Grid */}
-      <section className="py-16 md:py-24 container mx-auto px-4">
-        <div className="flex justify-between items-end mb-12 md:mb-16 border-b border-border pb-6 md:pb-8">
+      <section className="py-12 md:py-24 container mx-auto px-4">
+        <div className="flex justify-between items-end mb-8 md:mb-16 border-b border-border pb-4 md:pb-8">
           <div>
-            <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter text-white uppercase">Новинки</h2>
-            <p className="text-[10px] md:text-sm text-muted-foreground uppercase tracking-widest mt-2">Latest additions to the psych realm</p>
+            <h2 className="font-headline text-2xl md:text-5xl font-bold tracking-tighter text-white uppercase">Новинки</h2>
+            <p className="text-[9px] md:text-sm text-muted-foreground uppercase tracking-widest mt-1 md:mt-2">Latest additions to the psych realm</p>
           </div>
           <Link href="/shop" className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-primary hover:text-white transition-colors underline underline-offset-8">
             Все →
@@ -92,15 +94,15 @@ export default function Home() {
                   data-ai-hint="clothing photo"
                 />
               </div>
-              <h3 className="font-headline text-xs md:text-lg font-bold tracking-tight text-white uppercase truncate">{product.name}</h3>
-              <p className="text-primary text-xs md:text-base font-bold mt-1">{product.price}</p>
+              <h3 className="font-headline text-[10px] md:text-lg font-bold tracking-tight text-white uppercase truncate">{product.name}</h3>
+              <p className="text-primary text-[10px] md:text-base font-bold mt-1">{product.price}</p>
             </Link>
           ))}
         </div>
       </section>
 
       {/* Aesthetic Section */}
-      <section className="py-24 md:py-32 bg-muted/30 border-y border-border overflow-hidden relative">
+      <section className="py-20 md:py-32 bg-muted/30 border-y border-border overflow-hidden relative">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-headline text-[40vw] md:text-[30vw] font-bold text-white tracking-tighter select-none">
             VOID
@@ -108,8 +110,8 @@ export default function Home() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-headline text-4xl md:text-6xl font-bold text-white mb-6 md:mb-8 tracking-tighter glitch-text uppercase">ДЛЯ ТВОЕГО СКЕЛЕТА</h2>
-            <p className="text-sm md:text-lg text-muted-foreground leading-relaxed italic px-4">
+            <h2 className="font-headline text-3xl md:text-6xl font-bold text-white mb-6 md:mb-8 tracking-tighter glitch-text uppercase">ДЛЯ ТВОЕГО СКЕЛЕТА</h2>
+            <p className="text-xs md:text-lg text-muted-foreground leading-relaxed italic px-2">
               "Одежда PSIH не просто скрывает твоё тело. Она проявляет твою суть. Мрачная эстетика улиц, рожденная в подвалах и вдохновленная кошмарами."
             </p>
           </div>
@@ -117,16 +119,16 @@ export default function Home() {
       </section>
 
       {/* Visions Preview */}
-      <section className="py-16 md:py-24 container mx-auto px-4">
+      <section className="py-12 md:py-24 container mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="flex-1 space-y-6 md:space-y-8 text-center md:text-left">
-            <h2 className="font-headline text-5xl md:text-6xl font-bold text-white tracking-tighter uppercase leading-none">Psych<br/><span className="text-primary">Visions</span></h2>
-            <p className="text-sm md:text-xl text-muted-foreground uppercase tracking-widest">Галерея сообщества</p>
-            <p className="text-xs md:text-sm leading-relaxed text-muted-foreground max-w-md mx-auto md:mx-0">
+            <h2 className="font-headline text-4xl md:text-6xl font-bold text-white tracking-tighter uppercase leading-none">Psych<br/><span className="text-primary">Visions</span></h2>
+            <p className="text-xs md:text-xl text-muted-foreground uppercase tracking-widest">Галерея сообщества</p>
+            <p className="text-[10px] md:text-sm leading-relaxed text-muted-foreground max-w-md mx-auto md:mx-0">
               Загрузи свой образ и стань частью безумия. Наш ИИ создаст уникальную атмосферу для твоих фото.
             </p>
             <Link href="/visions" className="block">
-              <Button className="w-full md:w-auto bg-primary text-white hover:bg-white hover:text-black font-bold px-12 py-6 transition-all uppercase rounded-none tracking-widest">
+              <Button className="w-full md:w-auto bg-primary text-white hover:bg-white hover:text-black font-bold px-10 py-5 md:px-12 md:py-6 transition-all uppercase rounded-none tracking-widest text-[10px]">
                 ПРИСОЕДИНИТЬСЯ
               </Button>
             </Link>
@@ -135,7 +137,7 @@ export default function Home() {
             <div className="aspect-square bg-muted relative border border-border">
               <Image src="https://picsum.photos/seed/v1/500/500" alt="Vision 1" fill className="object-cover grayscale hover:grayscale-0 transition-all" data-ai-hint="horror fashion" />
             </div>
-            <div className="aspect-square bg-muted relative border border-border mt-6 md:mt-8">
+            <div className="aspect-square bg-muted relative border border-border mt-4 md:mt-8">
               <Image src="https://picsum.photos/seed/v2/500/500" alt="Vision 2" fill className="object-cover grayscale hover:grayscale-0 transition-all" data-ai-hint="dark model" />
             </div>
           </div>
