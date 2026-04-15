@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[80vh] md:h-[90vh] flex items-center justify-center overflow-hidden border-b border-border">
+      <section className="relative h-[85vh] md:h-[90vh] flex items-center justify-center overflow-hidden border-b border-border">
         <div className="absolute inset-0 z-0">
           <Image 
             src="https://picsum.photos/seed/psih-hero/1920/1080" 
@@ -32,18 +32,18 @@ export default function Home() {
         </div>
         
         {/* Side Icons */}
-        <div className="absolute bottom-12 left-6 z-20 md:left-12 flex gap-4">
-          <Link href="#" className="text-white/40 hover:text-white transition-colors">
-            <Instagram className="h-4 w-4 md:h-5 md:w-5" />
+        <div className="absolute bottom-8 left-6 z-20 md:bottom-12 md:left-12 flex gap-6 md:gap-4">
+          <Link href="#" className="text-white/60 hover:text-white transition-colors">
+            <Instagram className="h-5 w-5 md:h-5 md:w-5" />
           </Link>
-          <Link href="#" className="text-white/40 hover:text-white transition-colors">
-            <Send className="h-4 w-4 md:h-5 md:w-5" />
+          <Link href="#" className="text-white/60 hover:text-white transition-colors">
+            <Send className="h-5 w-5 md:h-5 md:w-5" />
           </Link>
         </div>
 
         <div className="relative z-10 text-center px-4 w-full flex flex-col items-center">
-          {/* Logo with Glitch Effect */}
-          <div className="relative w-full max-w-[70vw] md:max-w-xl aspect-[2/1] mb-8 md:mb-12 glitch-image">
+          {/* Logo with Glitch Effect - Larger on mobile */}
+          <div className="relative w-full max-w-[85vw] md:max-w-xl aspect-[2/1] mb-10 md:mb-12 glitch-image">
             <Image 
               src="/my-image.png" 
               alt="PSIH Logo" 
@@ -54,15 +54,15 @@ export default function Home() {
             />
           </div>
           
-          {/* Compressed Buttons for Mobile */}
-          <div className="flex justify-center gap-3 md:gap-4 w-full max-w-[260px] md:max-w-sm mx-auto">
+          {/* Compressed Buttons for Mobile - Larger tap targets */}
+          <div className="flex justify-center gap-4 w-full max-w-[320px] md:max-w-sm mx-auto">
             <Link href="/shop?gender=men" className="flex-1">
-              <Button className="w-full bg-white text-black hover:bg-primary hover:text-white font-headline font-bold text-[9px] md:text-[11px] py-3 md:py-4 transition-all uppercase tracking-[0.2em] rounded-none h-10 md:h-12 shadow-lg">
+              <Button className="w-full bg-white text-black hover:bg-primary hover:text-white font-headline font-bold text-[12px] md:text-[11px] py-4 md:py-4 transition-all uppercase tracking-[0.2em] rounded-none h-14 md:h-12 shadow-lg">
                 MEN
               </Button>
             </Link>
             <Link href="/shop?gender=women" className="flex-1">
-              <Button className="w-full bg-transparent border border-white text-white hover:bg-white hover:text-black font-headline font-bold text-[9px] md:text-[11px] py-3 md:py-4 transition-all uppercase tracking-[0.2em] rounded-none h-10 md:h-12 shadow-lg">
+              <Button className="w-full bg-transparent border border-white text-white hover:bg-white hover:text-black font-headline font-bold text-[12px] md:text-[11px] py-4 md:py-4 transition-all uppercase tracking-[0.2em] rounded-none h-14 md:h-12 shadow-lg">
                 WOMEN
               </Button>
             </Link>
